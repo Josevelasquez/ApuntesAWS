@@ -99,18 +99,6 @@ Los asuntos relacionados con la seguridad y la conformidad son una responsabilid
 
 Este modelo de responsabilidad compartida entre los clientes y AWS también abarca los controles de TI. De la misma forma que AWS y sus clientes comparten la responsabilidad del funcionamiento del entorno de TI, también comparten la administración, el funcionamiento y la verificación de los controles de TI. AWS puede ayudar a aliviar la carga que supone para los clientes operar los controles, para lo que administra los controles asociados con la infraestructura física implementada en el entorno de AWS de cuya administración se encargaba anteriormente el cliente. Dado que la implementación de cada cliente se realiza de manera diferente en AWS, los clientes tienen la oportunidad de migrar a AWS la administración de determinados controles de TI para obtener un (nuevo) entorno de control distribuido. Los clientes pueden usar la documentación de conformidad y control de AWS disponible para ejecutar sus procedimientos de verificación y evaluación de controles según sea necesario.
 
-
-
-## La plataforma de computación en la nube de Amazon AWS
-
-![1559027579862](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1559027579862.png)
-
-Amazon Web Services es una plataforma segura de  servicios en la nube con mas de 90 servicios diferentes que incluyen soluciones para:
-
-
-
-![1559028947780](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1559028947780.png)
-
 Recursos
 
 * <https://www.josemariagonzalez.es/amazon-web-services-aws/infraestructura-global-de-amazon-aws.html>
