@@ -1,6 +1,6 @@
 # AWS Core Services 
 
-AWS Cuenta con varias categorias de servicios entre las que encontramos:
+AWS cuenta con varias categorías de servicios entre las que encontramos:
 
 1. [Compute](./AWSComputeServices.md)
 2. [Storage & Content delivery](./AWSStorage&ContentDelivery)

@@ -4,7 +4,7 @@ Representado atravez de los siguientes servicios:
 
 1. Amazon EC2
 
-Es el recurso primario de computo este provee servicios remotos de computo, con el completo control sobre el redimensionamiento de la capacidad segun la necesidad
+Es el recurso primario de computo, este provee servicios remotos de computo, con el completo control sobre el redimensionamiento de la capacidad según la necesidad
 
 2. Amazon ECS
 

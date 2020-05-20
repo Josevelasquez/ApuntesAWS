@@ -4,22 +4,22 @@
 
 * Un único centro de datos típico alberga varios miles de servidores
 * Todos los centros de datos están en línea
-  * Ningún centro de datos esta en modo "cold", esto quiere decir que ningún centro se encuentra en modo pasivo lo que significa que todo los centros de datos reciben peticiones del cliente, lo que permite que en caso de falla todo el trafico sea redirigido de forma que siempre se equilibre los datos entre los disponibles.
+  * Ningún centro de datos está en modo "cold", esto quiere decir que ningún centro se encuentra en modo pasivo, lo que significa que todos los centros de datos reciben peticiones del cliente, lo que permite que en caso de falla todo el tráfico sea redirigido de forma que siempre se equilibre los datos entre los disponibles.
 
 Se conoce como AZs (Availability zones) como las zonas de disponibilidad de AWS
 
-* Cada zona de de disponibilidad esta: 
-  * Compuesta de uno o mas centros  de datos
+* Cada zona de disponibilidad está: 
+  * Compuesta de uno o más centros  de datos
     *  Existen zonas que incluyen hasta 6 centros de datos
-    * Ningún centro de de datos puede ser parte de varias zonas de disponibilidad
+    * Ningún centro de datos puede ser parte de varias zonas de disponibilidad
   * Diseñada para el aislamiento de fallas
   * Interconectada con otras AZs mediante enlaces privados de alta velocidad 
 
 ![ 				Regiones y zonas de disponibilidad 			](https://docs.aws.amazon.com/es_es/AWSEC2/latest/UserGuide/images/aws_regions.png)
 
-La anterior imagen representa como cada región es totalmente independiente, cada zona de disponibilidad esta aislada pero dichas zonas están conectadas  a través de conexiones de baja latencia. En el siguiente diagrama se ilustra la relación entre las regiones y las zonas de disponibilidad. Hay que tener en cuenta que AWS nunca sacara tus datos de una región es responsabilidad del cliente replicar datos en todas las regiones si así lo requieren las necesidades de tu negocio. . AWS proporciona información sobre el país y, en su caso, el estado donde reside cada región. Tu eres responsable de seleccionar la región para almacenar datos en función de tus necesidades y los requisitos de latencia de la red.
+La imagen representa que cada región es totalmente independiente, cada zona de disponibilidad está aislada pero dichas zonas están conectadas  a través de conexiones de baja latencia. En el siguiente diagrama se ilustra la relación entre las regiones y las zonas de disponibilidad. Hay que tener en cuenta que AWS nunca sacará tus datos de una región es responsabilidad del cliente replicar datos en todas las regiones si así lo requieren las necesidades de tu negocio. AWS proporciona información sobre el país y, en su caso, el estado donde reside cada región. Tú eres responsable de seleccionar la región para almacenar datos en función de tus necesidades y los requisitos de latencia de la red.
 
-Según la pagina oficial de AWS Amazon EC2 está hospedado en varias ubicaciones de todo el mundo. Dichas ubicaciones se componen de regiones y zonas de disponibilidad. Cada *región* es un área geográfica independiente. Cada región tiene varias ubicaciones aisladas conocidas como *zonas de disponibilidad*. Amazon EC2 ofrece la posibilidad de colocar recursos, como instancias y datos, en varias ubicaciones. Los recursos no se replican en las regiones, a menos que usted decida hacerlo específicamente.
+Según la página oficial de AWS Amazon EC2 está hospedado en varias ubicaciones de todo el mundo. Dichas ubicaciones se componen de regiones y zonas de disponibilidad. Cada *región* es un área geográfica independiente. Cada región tiene varias ubicaciones aisladas conocidas como *zonas de disponibilidad*. Amazon EC2 ofrece la posibilidad de colocar recursos, como instancias y datos, en varias ubicaciones. Los recursos no se replican en las regiones, a menos que usted decida hacerlo específicamente.
 
 Amazon opera centros de datos de alta disponibilidad con tecnología de vanguardia. Aunque es infrecuente, puede suceder que se produzcan errores que afecten a la disponibilidad de las instancias que están en la misma ubicación. Si hospeda todas las instancias en una misma ubicación y allí se produce un error, ninguna de las instancias estaría disponible.
 
@@ -35,7 +35,7 @@ Algunos recursos se pueden usar en todas las regiones (globales) y otros son esp
 | Nombres de recursos proporcionados por el usuario | Regional               | Cada nombre de recurso, como un nombre de grupo de seguridad o un nombre de par de claves, está vinculado a su región y solo puede usarse en la región en la que fue creado. Aunque puede crear recursos con el mismo nombre en varias regiones, no están relacionado entre ellos. |
 | AMI                                               | Regional               | Una AMI está vinculada a la región donde se encuentran los archivos dentro de Amazon S3. Puede copiar una AMI de una región en otra. Para obtener más información, consulte [Copiar una AMI](https://docs.aws.amazon.com/es_es/AWSEC2/latest/UserGuide/CopyingAMIs.html). |
 | Direcciones IP elásticas                          | Regional               | Una dirección IP elástica está vinculada a una región y solo puede asociarse a una instancia que esté en la misma región. |
-| Grupos de seguridad                               | Regional               | Una grupo de seguridad está vinculado a una región y solo puede asociarse a una instancia de la misma región. No puede habilitar una instancia para comunicarse con una instancia fuera de su región por medio de reglas de grupo de seguridad. El tráfico desde una instancia de otra región se considera ancho de banda WAN. |
+| Grupos de seguridad                               | Regional               | Un grupo de seguridad está vinculado a una región y solo puede asociarse a una instancia de la misma región. No puede habilitar una instancia para comunicarse con una instancia fuera de su región por medio de reglas de grupo de seguridad. El tráfico desde una instancia de otra región se considera ancho de banda WAN. |
 | Instantáneas de EBS                               | Regional               | Una instantánea de EBS está vinculada a su región y solo puede utilizarse para crear volúmenes en la misma región. Puede copiar una instantánea de una región a otra. Para obtener más información, consulte [Copia de una instantánea de Amazon EBS](https://docs.aws.amazon.com/es_es/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html). |
 | Volúmenes de EBS                                  | Zona de disponibilidad | Los volúmenes de Amazon EBS están vinculados a una zona de disponibilidad y solo se pueden adjuntar a instancias de esa misma zona de disponibilidad. |
 | Instancias                                        | Zona de disponibilidad | Una instancia está vinculada a la zona de disponibilidad en la que se lanzó. Ahora bien, su ID de instancia está vinculado a la región. |
@@ -52,11 +52,11 @@ Tenga en cuenta que existe un cargo por transferencia de datos entre regiones. P
 
 ### Zonas de disponibilidad
 
-Cuando lanza una instancia, puede seleccionar una zona de disponibilidad o dejar que elijamos una por usted. Si distribuye las instancias entre varias zonas de disponibilidad y una de las instancias genera un error, puede diseñar la aplicación de forma que una instancia en otra zona de disponibilidad pueda gestionar las solicitudes.
+Cuando lanza una instancia, puede seleccionar una zona de disponibilidad o dejar que elija una por usted. Si distribuye las instancias entre varias zonas de disponibilidad y una de las instancias genera un error, puede diseñar la aplicación de forma que una instancia en otra zona de disponibilidad pueda gestionar las solicitudes.
 
-También puede usar direcciones IP elásticas para enmascarar los errores de una instancia en una zona de disponibilidad volviendo a mapear rápidamente la dirección hacia una instancia en otra zona de disponibilidad. Para obtener más información, consulte [Direcciones IP elásticas](https://docs.aws.amazon.com/es_es/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html).
+También puede usar direcciones IP elásticas para enmascarar los errores de una instancia en una zona de disponibilidad, volviendo a mapear rápidamente la dirección hacia una instancia en otra zona de disponibilidad. Para obtener más información, consulte [Direcciones IP elásticas](https://docs.aws.amazon.com/es_es/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html).
 
-Una zona de disponibilidad está representada por un código de región seguido de un identificador de letra; por ejemplo, `us-east-1a`. Para garantizar que los recursos se distribuyen por todas las zonas de disponibilidad de una región, asignamos zonas de disponibilidad de manera independiente a nombres de cada cuenta de AWS. Por ejemplo, es posible que la zona de disponibilidad `us-east-1a` de su cuenta de AWS no se encuentre en la misma ubicación de `us-east-1a` que otra cuenta de AWS.
+Una zona de disponibilidad está representada por un código de región seguido de un identificador de letra; por ejemplo, `us-east-1a`. Para garantizar que los recursos se distribuyen por todas las zonas de disponibilidad de una región, asignamos zonas de disponibilidad de manera independiente a el nombre de cada cuenta de AWS. Por ejemplo, es posible que la zona de disponibilidad `us-east-1a` de su cuenta de AWS no se encuentre en la misma ubicación de `us-east-1a` que otra cuenta de AWS.
 
 Para coordinar las zonas de disponibilidad entre cuentas, debe usar el *ID de AZ*, que es un identificador único y constante de una zona de disponibilidad. Por ejemplo, `use1-az1`es un ID de zona de disponibilidad para la región `us-east-1` y tiene la misma ubicación en cada cuenta de AWS.
 
@@ -68,7 +68,7 @@ A medida que las zonas de disponibilidad crecen a lo largo del tiempo, nuestra c
 
 Los servicios de AWS se clasifican en dos tipos:
 
-* servicios no gestionado
+* Servicios no gestionados
    * El escalado
    * La tolerancia a fallas y  la disponibilidad son administrados por usted
 
@@ -76,16 +76,16 @@ No están incorporados en el servicio, lo que requiere configuración adicional 
 
 Por ejemplo, si ejecutas un servidor web en una instancia de [Amazon EC2](https://www.josemariagonzalez.es/amazon-web-services-aws/que-es-amazon-elastic-compute-cloud-amazon-ec2.html), ese servidor web no se escalará para manejar una mayor carga de tráfico o reemplazar instancias no saludables por otras sanas **a menos que especifique una solución de escalado como “Auto Scaling”, porque Amazon EC2 es una solución no administrada.**
 
-* servicios gestionados
-  * El escala 
-  * la tolerancia a fallas 
+* Servicios gestionados
+  * La escala 
+  * La tolerancia a fallas 
   * disponibilidad  
 
 Están incorporados por el servicio. Si tienes un sitio web estático que está alojando una solución de almacenamiento basada en la nube como [Amazon S3](https://www.josemariagonzalez.es/amazon-web-services-aws/como-crear-un-servidor-web-en-amazon-s3.html) sin un servidor web, **esas características de escalado, tolerancia a fallas y disponibilidad serían manejadas internamente por Amazon S3, porque S3 si es una solución administrada**.
 
 Los servicios gestionados aún requieren que el usuario los configure, por ejemplo, crear un cubo de Amazon S3 y establecer permisos para él. Sin embargo, los **servicios gestionados generalmente requieren menos configuración**.
 
-En conclusión a todo lo anterior El beneficio de usar un servicio no gestionado, **es que tienes mas control  del servicio o aplicación**
+En conclusión a todo lo anterior el beneficio de usar un servicio no gestionado, **es que tienes más control  del servicio o aplicación**
 
 ## Modelo de responsabilidad compartida AWS
 
