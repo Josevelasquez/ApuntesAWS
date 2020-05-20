@@ -2,8 +2,8 @@
 
 AWS Cuenta con varias categorias de servicios entre las que encontramos:
 
-1. Compute
-2. Storage & Content delivery
+1. [Compute](./AWSComputeServices.md)
+2. [Storage & Content delivery](./AWSStorage&ContentDelivery)
 3. Database
 4. Networking
 5. Management tools 
@@ -14,3 +14,5 @@ AWS Cuenta con varias categorias de servicios entre las que encontramos:
 10. Artificial Inteligence
 11. IoT
 12. AWS Developers Tools
+
+

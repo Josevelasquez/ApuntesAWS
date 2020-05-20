@@ -40,11 +40,9 @@ Según la pagina oficial se definen tres tipos de modelos de implementación en 
 * Aumenta la velocidad y la agilidad Dejar de gastar dinero en mantener centros de datos
 * Despliegue global en minutos
 
-# Comparación de arquitectura AWS vs  arquitectura tradicional 
 
 
 
-![1558801127033](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1558801127033.png)
 
 
 
