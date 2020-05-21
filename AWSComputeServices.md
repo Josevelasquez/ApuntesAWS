@@ -1,4 +1,4 @@
-# Compute
+# AWS Compute services
 
 Representado atravez de los siguientes servicios:
 
